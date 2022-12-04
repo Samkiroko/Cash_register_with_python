@@ -7,3 +7,6 @@ class Item:
 
     def __repr__(self) -> str:
         return "<class 'Item'>"
+
+    def __str__(self) -> str:
+        return f"{self.name}: ${self.price}/{self.measurement_unit}"

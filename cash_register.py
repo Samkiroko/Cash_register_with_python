@@ -74,3 +74,23 @@ class CashRegister:
         print("-" * 70)
         print(f"Total Price: ${self.get_invoice_total():.2f}")
         print("+" * 70)
+
+    def _get_items_as_dict(self) -> dict:
+        items_dict = {}
+        for item_name, invoice_item in self.items.items():
+            items_dict[item_name] = invoice_item.dict()
+        return items_dict
+
+    def dict(self) -> dict:
+        """Returns dictionary representation of Cash Register"""
+        cash_register = {
+            "customer": self.customer.dict(),
+            "items": self._get_items_as_dict(),
+            "purchase_date": self.purchase_date.strftime("%B %d, %Y"),
+            "invoice_total": self.get_invoice_total(),
+        }
+        return cash_register
+
+    def toJSON(self) -> str:
+        """Returns JSON formatted string of Cash Register"""
+        return json.dumps(self.dict(), indent=4, sort_keys=True)

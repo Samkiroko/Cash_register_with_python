@@ -244,7 +244,7 @@ My main goal on the project was to apply the knowledge learn to build a scalable
 
 After creating all module bundling the code was a challenge in to a single file.Luckly i used `stickytape` pip package to share a bundled code the full code is on the github link below ready for download.
 
-[github project code](https://www.example.com)
+[github project code](https://github.com/Samkiroko/Cash_register_with_python/tree/main)
 
 ## Future development:
 
